@@ -25,7 +25,7 @@ EXTRA_LDFLAGS += --strip-all -O3
 
 ########################## WIFI IC ############################
 CONFIG_RTL8812A = y
-CONFIG_RTL8821A = y
+CONFIG_RTL8821A = n
 CONFIG_RTL8814A = y
 ######################### Interface ###########################
 CONFIG_USB_HCI = y
