@@ -249,7 +249,7 @@ jobs:
             -e KPROBES \
             -e HAVE_KPROBES \
             -e KPROBE_EVENTS \
-            -e TMPFS_XATTR=y \
+            -e TMPFS_XATTR \
             -e TMPFS_POSIX_ACL \
             -e IP_NF_TARGET_TTL \
             -e IP6_NF_TARGET_HL \
@@ -343,6 +343,7 @@ jobs:
             --set-val BIG_CPU_MASK 112 \
             --set-val PRIME_CPU_MASK 128 \
             -e LRU_GEN \
+            -e RTL88XXAU \
             -e LRU_GEN_ENABLED
             
           # 根据系统类型修改配置
