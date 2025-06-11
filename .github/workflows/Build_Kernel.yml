@@ -197,7 +197,6 @@ jobs:
       - name: ⚙️ Configuring KernelSU (配置 KernelSU)
         run: |
           cd "$KERNEL_SOURCE"
-          patch -p1 < fix-ath9k-naming-conflict.patch
           KSU_VARIANT="${{ github.event.inputs.kernelsu_variant }}"
           
           echo "⚙️ Configure KernelSU Variants: $KSU_VARIANT (配置 KernelSU 变体: $KSU_VARIANT)"
@@ -217,6 +216,9 @@ jobs:
       - name: 🔨 Build the kernel (构建内核)
         run: |
           cd "$KERNEL_SOURCE"
+
+          echo 'Patching ATH9K'
+          patch -p1 < fix-ath9k-naming-conflict.patch || true
           
           # 设置环境变量
           export PATH="$TOOLCHAIN_DIR/clang/bin:$PATH"
