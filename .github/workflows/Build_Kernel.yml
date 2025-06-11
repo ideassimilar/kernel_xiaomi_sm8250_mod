@@ -197,7 +197,7 @@ jobs:
       - name: ⚙️ Configuring KernelSU (配置 KernelSU)
         run: |
           cd "$KERNEL_SOURCE"
-          
+          patch -p1 < fix-ath9k-naming-conflict.patch
           KSU_VARIANT="${{ github.event.inputs.kernelsu_variant }}"
           
           echo "⚙️ Configure KernelSU Variants: $KSU_VARIANT (配置 KernelSU 变体: $KSU_VARIANT)"
