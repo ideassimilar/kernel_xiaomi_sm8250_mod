@@ -591,6 +591,7 @@ jobs:
           - **Build Type:** ${{ github.event.inputs.build_type }}
           - **Build Date:** ${{ env.RELEASE_DATE }}
           - **Commit ID:** ${{ env.GIT_COMMIT_ID }}
+          - ** Docker Support
       
           ### 🇨🇳 中文 | Chinese
           - **目标机型:** ${{ env.TARGET_DEVICES }}
